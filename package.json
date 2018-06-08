@@ -1,0 +1,44 @@
+{
+    "name": "good-spatula",
+    "version": "1.0.0",
+    "description": "Light weight and reliable binding of htmlparser2, css-select and dom-serializer. ",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --reporter spec"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/caseygoodhew/good-spatula.git"
+    },
+    "keywords": [
+        "htmlparser2",
+        "css-select",
+        "dom-serializer",
+        "jquery",
+        "cheerio",
+        "html",
+        "parser",
+        "css",
+        "select",
+        "dom",
+        "document",
+        "serialize",
+        "serializer"
+    ],
+    "author": "Casey Goodhew",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/caseygoodhew/good-spatula/issues"
+    },
+    "homepage": "https://github.com/caseygoodhew/good-spatula#readme",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0"
+    },
+    "dependencies": {
+        "css-select": "^2.0.0",
+        "dom-serializer": "^0.1.0",
+        "htmlparser2": "^3.9.2",
+        "lodash": "^4.17.10"
+    }
+}
