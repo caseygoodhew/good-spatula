@@ -5,8 +5,6 @@ module.exports = (spatula, getDom) => () => {
 
         const result = [];
 
-        debugger;
-
         _.castArray(els || getDom()).forEach(el => {
             if (el.type === 'text') {
                 result.push(el.data);
