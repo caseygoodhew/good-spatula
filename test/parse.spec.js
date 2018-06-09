@@ -53,7 +53,7 @@ describe('Test that parse', function() {
     it('succeeds with a dom array', function() {
         const dom = [utils.defaultDom()];
         const result = parse(dom);
-        expect(result).to.equal(dom);
+        expect(result).to.deep.equal(dom);
     });
 
     it('succeeds with an array of undefined', function() {

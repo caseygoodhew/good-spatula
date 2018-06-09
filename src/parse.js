@@ -1,9 +1,14 @@
 const _htmlparser = require('htmlparser2');
 const _ = require('lodash');
 
-module.exports = (content) => {
+const parse = (content) => {
+
     if (!content) {
         return [];
+    }
+
+    if (_.isArray(content)) {
+        return _(content.map(parse)).flatten().compact().value();
     }
 
     if (typeof content === 'string' || Buffer.isBuffer(content)) {
@@ -15,23 +20,23 @@ module.exports = (content) => {
         })
     }
 
-    const objToTest = _.isArray(content) ? content[0] : content;
-
-    if (!objToTest) {
-        return [];
-    }
-
-    if (objToTest.tagName && objToTest.nodeType) {
+    if (content.tagName && content.nodeType) {
         return content;
     }
 
-    if (objToTest.type && objToTest.name) {
+    if (content.type && content.name) {
         return content;
     }
 
-    if (objToTest.type && objToTest.data) {
+    if (content.type && content.data) {
         return content;
+    }
+
+    if (content.getDom) {
+        return content.getDom();
     }
 
     throw new Error('Unable to determine content type');
 }
+
+module.exports = parse;
