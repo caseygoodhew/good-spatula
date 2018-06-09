@@ -8,7 +8,7 @@ describe('Test that html', function() {
         expect(html()).to.equal([
             '<div data-name="bowser" class="surprise-father">',
             '<div data-name="mario" class="player player-one">Mario</div>',
-            '<div data-name="luigi" class="play player-two">Luigi</div>',
+            '<div data-name="luigi" class="player player-two">Luigi</div>',
             '</div>'
         ].join(''));
     });
@@ -18,11 +18,11 @@ describe('Test that html', function() {
         expect(html()).to.equal([
             '<div data-name="bowser" class="surprise-father">',
             '<div data-name="mario" class="player player-one">Mario</div>',
-            '<div data-name="luigi" class="play player-two">Luigi</div>',
+            '<div data-name="luigi" class="player player-two">Luigi</div>',
             '</div>',
             '<div data-name="bowser" class="surprise-father">',
             '<div data-name="mario" class="player player-one">Mario</div>',
-            '<div data-name="luigi" class="play player-two">Luigi</div>',
+            '<div data-name="luigi" class="player player-two">Luigi</div>',
             '</div>'
         ].join(''));
     });

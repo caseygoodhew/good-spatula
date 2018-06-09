@@ -52,7 +52,7 @@ module.exports = function() {
                 name: 'div',
                 attribs: {
                     'data-name': 'luigi',
-                    class: 'play player-two'
+                    class: 'player player-two'
                 },
                 children: [],
                 next: null
