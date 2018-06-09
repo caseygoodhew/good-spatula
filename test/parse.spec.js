@@ -57,7 +57,47 @@ describe('Test that parse', function() {
     });
 
     it('succeeds with an array of undefined', function() {
-        expect(parse([])).to.deep.equal([]);
+        expect(parse([undefined, undefined])).to.deep.equal([]);
+    });
+
+    it('succeeds with mixed types', function() {
+        const luigiTextNode = utils.defaultDom().children[1].children[0];
+        // detach from parent to make the test slightly shorter
+        luigiTextNode.parent = null;
+
+        const items = [];
+        items.push(undefined);
+        items.push('');
+        items.push('Mario');
+        items.push(luigiTextNode);
+        items.push(utils.mockSpatula({
+            hello: 'world'
+        }));
+
+        // artificially tidy the dom elements so that they can be easily compared
+        const result = JSON.parse(JSON.stringify(parse(items)));
+
+        expect(result)
+            .to
+            .deep
+            .equal([{
+                    data: 'Mario',
+                    type: 'text',
+                    next: null,
+                    prev: null,
+                    parent: null
+                },
+                {
+                    data: 'Luigi',
+                    type: 'text',
+                    next: null,
+                    prev: null,
+                    parent: null
+                },
+                {
+                    hello: 'world'
+                }
+            ]);
     });
 
     it('throws with a number', function() {

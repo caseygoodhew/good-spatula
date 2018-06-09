@@ -9,6 +9,7 @@ module.exports = function() {
         spatulaMock.isSpatula = true;
 
         spatulaMock.getItem = () => item;
+        spatulaMock.getDom = spatulaMock.getItem;
 
         return spatulaMock;
     }
