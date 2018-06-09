@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 module.exports = (spatula, getDom) => function() {
-    return getDom().map(spatula).forEach(...arguments);
+    return _.castArray(getDom() || []).map(spatula).forEach(...arguments);
 }
