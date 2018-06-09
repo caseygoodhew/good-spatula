@@ -1,7 +1,7 @@
 {
     "name": "good-spatula",
     "version": "1.0.0",
-    "description": "Light weight and reliable binding of htmlparser2, css-select and dom-serializer. ",
+    "description": "Light weight and reliable binding of htmlparser2, css-select and dom-serializer.",
     "main": "index.js",
     "scripts": {
         "test": "./node_modules/.bin/mocha --reporter spec"
