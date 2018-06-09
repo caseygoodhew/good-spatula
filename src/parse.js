@@ -15,13 +15,21 @@ module.exports = (content) => {
         })
     }
 
-    const obj = _.isArray(content) ? content[0] : content;
+    const objToTest = _.isArray(content) ? content[0] : content;
 
-    if (!obj) {
+    if (!objToTest) {
         return [];
     }
 
-    if (obj.tagName && obj.nodeType) {
+    if (objToTest.tagName && objToTest.nodeType) {
+        return content;
+    }
+
+    if (objToTest.type && objToTest.name) {
+        return content;
+    }
+
+    if (objToTest.type && objToTest.data) {
         return content;
     }
 
