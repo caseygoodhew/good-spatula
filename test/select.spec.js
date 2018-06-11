@@ -40,4 +40,13 @@ describe('Test that select', function() {
         const result = select('.player-one');
         expect(result).to.be.undefined;
     });
+
+    it('selects current element on empty selector', function() {
+        const dom = utils.defaultDom();
+        const select = _select(utils.mockSpatula, utils.defaultDom);
+
+        expect(select('').getItem()).to.deep.equal(dom);
+        expect(select(null).getItem()).to.deep.equal(dom);
+        expect(select().getItem()).to.deep.equal(dom);
+    });
 });
