@@ -35,4 +35,11 @@ describe('Test that spatula', function() {
         expect(first.html()).to.equal(markup);
         expect(second.html()).to.equal(markup);
     });
+
+    it('is returns empty when the selector doesn\'t match', function() {
+        const markup = '<div class="outer"><div class="inner">value</div></div>';
+
+        const result = spatula(markup);
+        expect(result('.neither').html()).to.equal('');
+    });
 });
