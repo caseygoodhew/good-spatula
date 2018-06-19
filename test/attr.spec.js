@@ -14,8 +14,10 @@ describe('Test that attr', function() {
         expect(attr('qwertyuiop')).to.be.undefined;
     });
 
-    it('returns undefined when querying an array', function() {
-        const attr = _attr(utils.mockSpatula, () => [utils.defaultDom()]);
-        expect(attr('class')).to.be.undefined;
+    it('returns array of values when querying an array', function() {
+        const attr = _attr(utils.mockSpatula, () => [utils.defaultDom(), {
+            attribs: null
+        }]);
+        expect(attr('class')).to.deep.equal(['surprise-father', undefined]);
     });
 });

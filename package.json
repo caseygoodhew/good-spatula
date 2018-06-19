@@ -1,6 +1,6 @@
 {
     "name": "good-spatula",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Light weight and reliable binding of htmlparser2, css-select and dom-serializer.",
     "main": "index.js",
     "scripts": {
